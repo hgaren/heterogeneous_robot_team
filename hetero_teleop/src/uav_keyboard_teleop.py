@@ -28,7 +28,6 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 import roslib
-roslib.load_manifest('turtlebot_teleop')
 import rospy
 
 from geometry_msgs.msg import Twist
