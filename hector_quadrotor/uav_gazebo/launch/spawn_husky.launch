@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <include file="$(find ugv_control)/launch/control.launch"/>
+
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find ugv_description)/urdf/description.gazebo.xacro'"/>
+  
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher1" output="screen" >
+
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+    <node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub calibrated std_msgs/Bool true" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+ <node name="spawn_husky_model" pkg="gazebo_ros" type="spawn_model"
+    args="-x 0 -y 0 -z 0.3  -unpause -urdf -param robot_description -model mobile_base"/>
+
+	<node name="odom_to_world"
+			pkg="tf" type="static_transform_publisher" 
+			args="0.0 0.0 0.0 0.0 0.0 0  world odom 1000 " />
+      <node name="uavworld_to_world"
+			pkg="tf" type="static_transform_publisher" 
+			args="0.0 0.0 0.0 0.0 0.0 0  world /uav/world 1000 " />
+      <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan">
+
+        <remap from="cloud_in" to="/ugv/cloud"/>
+         
+        <remap from="scan" to="/ugv/scan"/>
+
+        <rosparam>
+        
+            target_frame: laser_link # Leave disabled to output scan in pointcloud frame
+            transform_tolerance: 0.01
+            min_height: 0.0
+            max_height: 0.05
+            angle_min: -1.5708 # -M_PI/2
+            angle_max: 1.5708 # M_PI/2
+            angle_increment: 0.0087 # M_PI/360.0
+            scan_time: 0.3333
+            range_min: 0.3
+            range_max: 15.0
+            use_inf: true
+            inf_epsilon: 1.0
+
+            # Concurrency level, affects number of pointclouds queued for processing and number of threads used
+            # 0 : Detect number of cores
+            # 1 : Single threaded
+            # 2->inf : Parallelism level
+            concurrency_level: 1
+        </rosparam>
+
+    </node>
+
+
+</launch>

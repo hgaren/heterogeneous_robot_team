@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<launch>
+   
+  <!-- Start Gazebo with wg world running in (max) realtime -->
+  <include file="$(find hetero_gazebo_worlds)/launch/map_asphalt.launch"/>
+  <include file="$(find hetero_demo)/launch/outdoor_rviz.launch"/>
+  <!-- Spawn simulated quadrotor  uav and husky ugv  -->
+  <include file="$(find uav_gazebo)/launch/spawn_two_robots.launch" >
+    <arg name="model" value="$(find uav_description)/urdf/quadrotor_hokuyo_utm30lx.gazebo.xacro"/> 
+  </include>
+  
+   
+</launch>

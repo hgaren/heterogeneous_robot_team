@@ -1,0 +1,26 @@
+<package>
+  <name>hetero_demo</name>
+  <version>0.3.5</version>
+  <description>hector_demo  launch files for rviz anf gazebo</description>
+   <maintainer email="g.haddeler@gmail.com">Garen</maintainer>
+
+  <license>BSD</license>
+
+
+
+
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>hector_quadrotor_gazebo</run_depend>
+  <run_depend>hector_gazebo_worlds</run_depend>
+  <run_depend>hector_mapping</run_depend>
+  <run_depend>hector_geotiff</run_depend>
+  <run_depend>hector_trajectory_server</run_depend>
+
+  <!-- Dependencies needed only for running tests. -->
+
+</package>

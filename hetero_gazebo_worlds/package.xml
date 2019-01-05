@@ -1,0 +1,28 @@
+<package>
+  <name>hetero_gazebo_worlds</name>
+  <version>0.3.8</version>
+  <description>hetero_gazebo_worlds provides gazebo scenarios</description>
+  <maintainer email="g.haddeler@gmail.com">Garen</maintainer>
+
+  <license>BSD</license>
+ 
+  <!-- <url type="bugtracker"></url> -->
+ 
+  <!-- Dependencies which this package needs to build itself. -->
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Dependencies needed to compile this package. -->
+
+  <!-- Dependencies needed after this package is compiled. -->
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>hector_gazebo_plugins</run_depend>
+
+  <!-- Dependencies needed only for running tests. -->
+  <!-- <test_depend>gazebo_ros</test_depend> -->
+  <!-- <test_depend>hector_gazebo_plugins</test_depend> -->
+
+<export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+</export>
+
+</package>

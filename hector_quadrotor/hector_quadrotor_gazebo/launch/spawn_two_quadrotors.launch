@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+   <arg name="model" default="$(find hector_quadrotor_description)/urdf/quadrotor.gazebo.xacro" />
+
+   <group ns="uav">
+     <include file="$(find hector_quadrotor_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="uav" />
+       <arg name="tf_prefix" value="uav" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="y" value="-1.0" />
+     </include>
+   </group>
+
+
+    <include file="$(find husky_control)/launch/control.launch"/>
+
+<param name="robot_description" command="$(find xacro)/xacro.py '$(find ugv_description)/urdf/description.gazebo.xacro'"/>
+  
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher1" output="screen" >
+
+    <param name="publish_frequency" type="double" value="50.0" />
+  </node>
+    <node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub calibrated std_msgs/Bool true" />
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+ <node name="spawn_husky_model" pkg="gazebo_ros" type="spawn_model"
+    args="-x 0 -y 0 -z 0.3  -unpause -urdf -param robot_description -model mobile_base"/>
+
+	<node name="odom_to_world"
+			pkg="tf" type="static_transform_publisher" 
+			args="0.0 0.0 0.0 0.0 0.0 0  world odom 1000 " />
+</launch>
+

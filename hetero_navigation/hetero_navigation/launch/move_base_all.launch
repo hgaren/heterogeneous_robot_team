@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+  <launch>
+<group ns="ugv">
+    <include file="$(find ugv_navigation)/launch/move_base.launch" />
+  </group>
+   <group ns="uav">
+    <include file="$(find uav_navigation)/launch/move_base.launch" />
+  </group>
+
+</launch>
