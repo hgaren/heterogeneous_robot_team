@@ -1,5 +1,4 @@
 # hetero_teleop
-<<<<<<< HEAD
 This file is a Teleop code facilitating control of the hector quadrotor and husky ugv. 
 ## send_coordinates.py
 This script is manually send gps waypoint to gps_waypoint node
