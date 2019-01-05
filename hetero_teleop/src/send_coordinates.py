@@ -1,5 +1,9 @@
 #!/usr/bin/env python
+<<<<<<< HEAD
 # 2018 URC GPS waypoint controller
+=======
+# 2018 URC subs  waypoint controller "manuel"
+>>>>>>> 9145718fd843811c6c23582637e1bac9461d54df
 # ITU Rover Team
 import rospy
 from sensor_msgs.msg import NavSatFix
@@ -73,4 +77,8 @@ def main():
 
 if __name__ == '__main__':
 	main()
+<<<<<<< HEAD
 	rospy.spin()
+=======
+	rospy.spin()
+>>>>>>> 9145718fd843811c6c23582637e1bac9461d54df
