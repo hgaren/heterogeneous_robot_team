@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-# 2018 ERC subs joy shovel,  pubs to serial node
-# " S + led + 1st servo+ 2nd servo + 3nd servo + 4nd servo + 5nd servo + F"
+# 2018 URC subs  waypoint controller "manuel"
 # ITU Rover Team
 import rospy
 from sensor_msgs.msg import NavSatFix
