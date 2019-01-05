@@ -1,7 +1,7 @@
-###Heterogenous Team Gazebo Simulation Package
+# Heterogenous Team Gazebo Simulation Package
 Istanbul Technical University Laboratory
 
-# The largest heading
+
 
 Opens gazebo simulation, localizations, husky ugv and hector uav.
 ```
