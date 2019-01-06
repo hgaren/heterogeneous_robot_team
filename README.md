@@ -38,4 +38,4 @@ Subscribe both cloud data and create two different viewpoint of 3D map. TO DO: M
 roslaunch hetero_mapping octomap.launch
 ```
 
-![GitHub Logo](/Pictures/logo.png)
+![ScreenShot](/logo.png)
