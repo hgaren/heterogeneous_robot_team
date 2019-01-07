@@ -1,10 +1,10 @@
-# Heterogenous Team Gazebo Simulation Package
+# Heterogenous Team ROS-Gazebo Simulation Package
 
 ## Istanbul Technical University Laboratory
 The purpose of this package is to simulate heterogenous robot team (a aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration.
 
 ### Notes
-This package  also includes other package. 
+This ROS package  also includes other packages. 
 Before building this package, you should install these packages: hector_pose_estimatition , hector_uav_msg, hardware_interface, controller_interface, move_base, robot_localization, hector_gazebo_plugins, hector_sensor_description, gazebo_ros_control, message_to_tf, interactive_marker_twist_server,
 twist_mux, dwa_local_planner,octomap_server , joint_State_controller, diff_drive_controller, velodyne_gazebo_plugin
 
