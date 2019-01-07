@@ -13,7 +13,7 @@ If gazebo wont open, you also need to install "palm_tree" , "oak_tree", "constru
 For cmake , minimum requirement is 3.03 . If you need to upgrade the CMake, you can follow this instructions from  [link](https://askubuntu.com/questions/610291/how-to-install-cmake-3-2-on-ubuntu)
 
 ### Applications
-
+Installs ROS packages from main server
 ```
 sudo apt-get install ros-<distro>-<package-name>
 ```
