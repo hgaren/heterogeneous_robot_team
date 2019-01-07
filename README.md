@@ -32,8 +32,8 @@ roslaunch hetero_navigation move_base_all.launch
 
 Python scripts for keyboard teleoperation UGV and UAV 
 ```
-rosrun hetero_teleop ugv_keyboard_teleop
-rosrun hetero_teleop uav_keyboard_teleop
+rosrun hetero_teleop ugv_keyboard_teleop.py
+rosrun hetero_teleop uav_keyboard_teleop.py
 ```
 
 Designs an exploration senario. The senario is GPS based bounded autonomous exploration. By writing *the latitudes and longitutes and number of the points* in the node for the area that wanted to bound, an algorithm  starts to send 2d coordinates to the move_base for both robots  in that closed area.
