@@ -47,5 +47,10 @@ Subscribe both cloud data and create two different viewpoint of 3D map. TO DO: M
 ```
 roslaunch hetero_mapping octomap.launch
 ```
+Gazebo Simulation Screenshot
 
-![ScreenShot](/logo.png)
+![ScreenShot](/hetero_2.png)
+
+Rviz Screenshot while accomplising senario
+ 
+![ScreenShot](/hetero_1.png)
