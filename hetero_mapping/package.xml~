@@ -2,7 +2,7 @@
 <package>
   <name>hetero_mapping</name>
   <version>0.0.0</version>
-  <description>The cloud merging package</description>
+  <description>The outdoor_waypoint_nav package</description>
 
   <maintainer email="g.haddeler@gmail.com">Garen</maintainer>
 
