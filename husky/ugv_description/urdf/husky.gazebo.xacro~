@@ -68,7 +68,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 	    <ray>
 	      <scan>
 		<horizontal>
-		  <samples>720</samples>
+		  <samples>360</samples>
 		  <resolution>1</resolution>
 		  <min_angle>-3.14</min_angle> <!--135 derece -> 2.35619 radyan-->
 		  <max_angle>3.14</max_angle>  <!--135 derece -> 2.35619 radyan-->

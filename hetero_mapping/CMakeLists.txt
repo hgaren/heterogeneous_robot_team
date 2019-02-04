@@ -27,7 +27,9 @@ add_executable(gicp_cloud_merge src/gicp_cloud_merge)
 target_link_libraries(gicp_cloud_merge ${catkin_LIBRARIES})
 target_link_libraries (gicp_cloud_merge ${PCL_LIBRARIES})
  
-
+add_executable(cloud_merge src/cloud_merge)
+target_link_libraries(cloud_merge ${catkin_LIBRARIES})
+target_link_libraries (cloud_merge ${PCL_LIBRARIES})
 install(DIRECTORY  launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
