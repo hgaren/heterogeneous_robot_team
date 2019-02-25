@@ -136,7 +136,7 @@ def talker():
 	plt.grid(color='r', linestyle='--', linewidth=1 )
 	
 	# plotting the points 
-	string1 = "Total Orthogonal and Orthogonal "
+	string1 = "Total Regular Orthogonal  "
 	string2 = "UAV Orthogonal"
 	string3 = "UAV Regular"
 	string4 = "UGV Orthogonal"
@@ -160,13 +160,13 @@ def talker():
 	#UAV  
 	plt2.grid(color='r', linestyle='--', linewidth=1 )
 	plt2.subplot(2, 1, 1)
-	plt2.title(string2+' Configuration Performance  Metrics') 
+	plt2.title(string3+' Configuration Performance  Metrics') 
 	plt2.plot(x3, y3,'o-') 
 	plt2.xlabel('Sample Number ') 
 	plt2.ylabel('RMS Values ') 
 		
 	plt2.subplot(2, 1, 2)
-	plt2.title(string2+' Configuration Performance  Metrics') 
+	plt2.title(string3+' Configuration Performance  Metrics') 
 	plt2.plot(x4, y4,'o-') 
 	plt2.xlabel('Sample Number ') 
 	plt2.ylabel('Occupancy Rate  % ') 
