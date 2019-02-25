@@ -98,7 +98,45 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 	  </sensor>
 	  </gazebo>
 
+   <gazebo reference="laser_link1">
+	  <sensor name="sensor" type="ray">
+	    <always_on>true</always_on> 
+	    <update_rate>5</update_rate>
+	    <visualize>false</visualize>
+	    <ray>
+	      <scan>
+		<horizontal>
+		  <samples>720</samples>
+		  <resolution>1</resolution>
+		  <min_angle>-3.14</min_angle> <!--135 derece -> 2.35619 radyan-->
+		  <max_angle>3.14</max_angle>  <!--135 derece -> 2.35619 radyan-->
+		</horizontal>
+		<vertical>
+		  <samples>16</samples> <!--lazer katman sayisi-->
+		  <resolution>1</resolution>
+		  <min_angle>-0.20</min_angle> <!--radyan-->
+		  <max_angle>0.261</max_angle> <!--radyan-->
+		</vertical>
+	      </scan>
+	      <range>
+		<min>0.65</min> <!--metre-->
+		<max>50</max> <!--metre-->
+		<resolution>0.02</resolution>
+	      </range>
+	    </ray>
+	    <plugin name="gazebo_ros_laser_controller_1" filename="libgazebo_ros_velodyne_laser.so"> <!-- https://bitbucket.org/DataspeedInc/velodyne_simulator.git -->
+	      <frameName>laser_link</frameName>
+	      <topicName>ugv/cloud1</topicName>
+	      <gaussianNoise>0.02</gaussianNoise>
+	      <hokuyoMinIntensity>1</hokuyoMinIntensity>
+	      <alwaysOn>true</alwaysOn>
+	      <updateRate>5</updateRate>
+	      <pcl>2.0</pcl> 
+	    </plugin>
+	  </sensor>
+	  </gazebo>
 
+    
 
   </xacro:macro>
 

@@ -84,6 +84,7 @@ void odomCallback_uav( const nav_msgs::Odometry msg){
 }
 void odomCallback_ugv( const nav_msgs::Odometry msg){
  odom_ugv=msg; 
+ 
 }
 
 void process(){

@@ -46,7 +46,7 @@ def letsSerial():
 	do_once=0
 	print_once=0
 	global z_current,odom
-	length=10
+	length=7
 	pub_odom=rospy.Publisher("/uav/odometry_filtered", Odometry, queue_size=10)
 	 
 

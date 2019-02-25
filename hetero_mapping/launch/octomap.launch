@@ -31,5 +31,6 @@
 	</node>
         </group>
 	<!--node pkg="hetero_mapping" type="gicp_cloud_merge" name="hetero_mapping_node" output="screen"/-->
-
+	 
+ 
 </launch>

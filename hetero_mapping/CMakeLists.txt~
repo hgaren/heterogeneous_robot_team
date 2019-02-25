@@ -24,22 +24,22 @@ roslaunch_add_file_check(launch)
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-add_executable(gicp_cloud_merge src/gicp_cloud_merge)
-target_link_libraries(gicp_cloud_merge ${catkin_LIBRARIES})
-target_link_libraries (gicp_cloud_merge ${PCL_LIBRARIES})
+add_executable( cloud_metric src/cloud_metric)
+target_link_libraries(cloud_metric ${catkin_LIBRARIES})
+target_link_libraries (cloud_metric ${PCL_LIBRARIES})
  
-add_executable(cloud_merge src/cloud_merge)
+add_executable(pcd_view src/pcd_view)
+target_link_libraries(pcd_view ${catkin_LIBRARIES})
+target_link_libraries (pcd_view ${PCL_LIBRARIES})
+
+add_executable(cloud_merge src/cloud_merge_v1)
 target_link_libraries(cloud_merge ${catkin_LIBRARIES})
-target_link_libraries (cloud_merge ${PCL_LIBRARIES})
-
-add_executable(cloud_merge_v1 src/cloud_merge_v1)
-target_link_libraries(cloud_merge_v1 ${catkin_LIBRARIES})
-target_link_libraries (cloud_merge_v1  ${PCL_LIBRARIES})
+target_link_libraries (cloud_merge  ${PCL_LIBRARIES})
 
 
-add_executable(cloud_feature src/cloud_feature.cpp)
-target_link_libraries(cloud_feature ${catkin_LIBRARIES})
-target_link_libraries (cloud_feature ${PCL_LIBRARIES})
+add_executable(cloud_filter src/cloud_filter.cpp)
+target_link_libraries(cloud_filter ${catkin_LIBRARIES})
+target_link_libraries (cloud_filter ${PCL_LIBRARIES})
 install(DIRECTORY  launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
