@@ -22,7 +22,7 @@
 #define angle_horizontal_resolution 0.4
 #define angle_horizontal_view 30
 #define SIZE 900000
-#define resolution 0.05
+#define resolution 0.01
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr total_cloud          (new pcl::PointCloud<pcl::PointXYZ>);
 
