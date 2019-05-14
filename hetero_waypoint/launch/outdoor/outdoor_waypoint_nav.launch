@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-
-<launch>
-  <!--In Debug Mode save results in the params directory at results.txt-->
-  <param name="/outdoor_waypoint_nav/debug" type="bool" value="true" />
-
-  <node name="ugv_waypoint_nav" pkg="ugv_waypoint_nav" type="gps_waypoint" output="screen"/>
-
-</launch>

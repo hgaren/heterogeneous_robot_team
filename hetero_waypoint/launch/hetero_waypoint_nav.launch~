@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+
+  <node name="uav_waypoint_controller" pkg="hetero_waypoint" type="uav_waypoint_controller"/>
+  <node name="ugv_waypoint_controller" pkg="hetero_waypoint" type="ugv_waypoint_controller" output="screen"/>
+
+</launch>
