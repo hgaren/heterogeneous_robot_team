@@ -48,7 +48,7 @@ or open only one waypoint launch file for both vehicle
 roslaunch hetero_waypoint hetero_waypoint_nav.launch
 ```
 
-Subscribes both cloud data and creates one merged map from two different viewpoints of 3D cloud.  
+Subscribes both cloud data and creates one merged map from two different viewpoints of 3D cloud. Merging is done after finding transformations of robots to each other.Generalized-ICP  gives better performance after initialize first transformation.
 ```
 roslaunch hetero_mapping map_merging.launch
 ```
@@ -60,4 +60,13 @@ Rviz Screenshot while accomplising senario
  
 ![ScreenShot](/hetero_1.png)
 
+For  implementation, real time sensor values are used for same merging algorithm. For 3D point registiration, due to not enough quality of UAV's localization, Octomap did nit used. Below ICP based algorithm is used for UAV registiration. 
+```
+rosrun hetero_mapping uav_mapping_real
+```
+3D registiration of UGV, due to dynamic obstacles and not enough accurate GPS (due to tree environment), LiDAR and Odometry Mapping (LOAM) algorithm is used. More information about LOAM [link](https://github.com/laboshinl/loam_velodyne)   
+Below script is used to merge map in real time environment. 
+```
+rosrun hetero_mapping cloud_merge_real
+```
 
