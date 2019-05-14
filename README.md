@@ -42,10 +42,15 @@ Designs an exploration senario. The senario is GPS based bounded autonomous expl
 rosrun hetero_waypoint uav_waypoint_controller
 rosrun hetero_waypoint ugv_waypoint_controller
 ```
+or open only one waypoint launch file for both vehicle
 
-Subscribe both cloud data and create two different viewpoint of 3D map. TO DO: Merge both map into one big map.
 ```
-roslaunch hetero_mapping octomap.launch
+roslaunch hetero_waypoint hetero_waypoint_nav.launch
+```
+
+Subscribes both cloud data and creates one merged map from two different viewpoints of 3D cloud.  
+```
+roslaunch hetero_mapping map_merging.launch
 ```
 Gazebo Simulation Screenshot
 
@@ -54,3 +59,5 @@ Gazebo Simulation Screenshot
 Rviz Screenshot while accomplising senario
  
 ![ScreenShot](/hetero_1.png)
+
+
