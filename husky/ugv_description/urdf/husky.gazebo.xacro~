@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!--
+Software License Agreement (BSD)
+
+\file      husky.gazebo.xacro
+\authors   Paul Bovbel <pbovbel@clearpathrobotics.com, Devon Ash <dash@clearpathrobotics.com>
+\copyright Copyright (c) 2015, Clearpath Robotics, Inc., All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that
+the following conditions are met:
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the
+   following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+   following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Neither the name of Clearpath Robotics nor the names of its contributors may be used to endorse or promote
+   products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WAR-
+RANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, IN-
+DIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<robot name="husky_robot_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="husky_robot_gazebo">
+
+    <gazebo>
+      <plugin name="imu_controller" filename="libhector_gazebo_ros_imu.so">
+        <robotNamespace>/</robotNamespace>
+        <updateRate>50.0</updateRate>
+        <bodyName>base_link</bodyName>
+        <!--frameId>imu_link</fameId-->
+        <topicName>/ugv/imu/data</topicName>
+        <accelDrift>0.005 0.005 0.005</accelDrift>
+        <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
+        <rateDrift>0.005 0.005 0.005 </rateDrift>
+        <rateGaussianNoise>0.005 0.005 0.005 </rateGaussianNoise>
+        <headingDrift>0.005</headingDrift>
+        <headingGaussianNoise>0.005</headingGaussianNoise>
+      </plugin>
+    </gazebo>
+ 
+    <gazebo>
+      <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
+        <updateRate>40</updateRate>
+        <robotNamespace>/</robotNamespace>
+        <bodyName>base_link</bodyName>
+        <frameId>base_link</frameId>
+        <topicName>/ugv/gps/fix</topicName>
+        <velocityTopicName>/ugv/gps/vel</velocityTopicName>
+        <referenceLatitude>41.1051758261</referenceLatitude>
+        <referenceLongitude>29.0235312602</referenceLongitude>
+        <referenceHeading>0</referenceHeading>
+        <referenceAltitude>0</referenceAltitude>
+        <gaussianNoise>0.01 0.01 0.1</gaussianNoise>  
+        <drift>0.0001 0.0001 0.0001</drift>
+      </plugin>
+    </gazebo>
+	<!-- 3D LIDAR -->
+	<gazebo reference="laser_link">
+	  <sensor name="velodyne" type="ray">
+	    <always_on>true</always_on> 
+	    <update_rate>5</update_rate>
+	    <visualize>false</visualize>
+	    <ray>
+	      <scan>
+		<horizontal>
+		  <samples>720</samples>
+		  <resolution>1</resolution>
+		  <min_angle>-3.14</min_angle> <!--135 derece -> 2.35619 radyan-->
+		  <max_angle>3.14</max_angle>  <!--135 derece -> 2.35619 radyan-->
+		</horizontal>
+		<vertical>
+		  <samples>16</samples> <!--lazer katman sayisi-->
+		  <resolution>1</resolution>
+		  <min_angle>-0.20</min_angle> <!--radyan-->
+		  <max_angle>0.261</max_angle> <!--radyan-->
+		</vertical>
+	      </scan>
+	      <range>
+		<min>0.65</min> <!--metre-->
+		<max>50</max> <!--metre-->
+		<resolution>0.02</resolution>
+	      </range>
+	    </ray>
+	    <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_laser.so"> <!-- https://bitbucket.org/DataspeedInc/velodyne_simulator.git -->
+	      <frameName>laser_link</frameName>
+	      <topicName>ugv/cloud</topicName>
+	      <gaussianNoise>0.02</gaussianNoise>
+	      <hokuyoMinIntensity>1</hokuyoMinIntensity>
+	      <alwaysOn>true</alwaysOn>
+	      <updateRate>5</updateRate>
+	      <pcl>2.0</pcl> 
+	    </plugin>
+	  </sensor>
+	  </gazebo>
+
+   <gazebo reference="laser_link1">
+	  <sensor name="sensor" type="ray">
+	    <always_on>true</always_on> 
+	    <update_rate>5</update_rate>
+	    <visualize>false</visualize>
+	    <ray>
+	      <scan>
+		<horizontal>
+		  <samples>720</samples>
+		  <resolution>1</resolution>
+		  <min_angle>-3.14</min_angle> <!--135 derece -> 2.35619 radyan-->
+		  <max_angle>3.14</max_angle>  <!--135 derece -> 2.35619 radyan-->
+		</horizontal>
+		<vertical>
+		  <samples>16</samples> <!--lazer katman sayisi-->
+		  <resolution>1</resolution>
+		  <min_angle>-0.20</min_angle> <!--radyan-->
+		  <max_angle>0.261</max_angle> <!--radyan-->
+		</vertical>
+	      </scan>
+	      <range>
+		<min>0.65</min> <!--metre-->
+		<max>50</max> <!--metre-->
+		<resolution>0.02</resolution>
+	      </range>
+	    </ray>
+	    <plugin name="gazebo_ros_laser_controller" filename="libgazebo_ros_velodyne_laser.so"> <!-- https://bitbucket.org/DataspeedInc/velodyne_simulator.git -->
+	      <frameName>laser_link</frameName>
+	      <topicName>ugv/cloud1</topicName>
+	      <gaussianNoise>0.02</gaussianNoise>
+	      <hokuyoMinIntensity>1</hokuyoMinIntensity>
+	      <alwaysOn>true</alwaysOn>
+	      <updateRate>5</updateRate>
+	      <pcl>2.0</pcl> 
+	    </plugin>
+	  </sensor>
+	  </gazebo>
+
+    
+
+  </xacro:macro>
+
+</robot>
+

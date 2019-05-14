@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+   <arg name="model" default="$(find uav_description)/urdf/quadrotor.gazebo.xacro" />
+
+   <group ns="uav">
+     <include file="$(find uav_gazebo)/launch/spawn_quadrotor.launch">
+       <arg name="name" value="uav" />
+       <arg name="tf_prefix" value="uav" />
+       <arg name="model" value="$(arg model)" />
+       <arg name="y" value="-1.0" />
+     </include>
+   </group>
+
+ <include file="$(find uav_gazebo)/launch/spawn_husky.launch"/>
+    
+</launch>
+

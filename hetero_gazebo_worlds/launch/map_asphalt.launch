@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find hetero_gazebo_worlds)/launch/start.launch">
+   <arg name="world" value="$(find hetero_gazebo_worlds)/worlds/map_asp.world"/> 
+  </include>
+
+</launch>
