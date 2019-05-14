@@ -1,7 +1,7 @@
-# Heterogenous Team ROS-Gazebo Simulation Package
+# Heterogeneous Team ROS-Gazebo Simulation Package
 
 ## Istanbul Technical University Laboratory
-The purpose of this package is to simulate heterogenous robot team (an aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration.
+The purpose of this package is to simulate heterogeneous robot team (an aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration. Lastly, while implementing the heterogeneous team in real life,  slightly different techniques of registiration and map merging are used.
 
 ### Notes
 This ROS package  also includes other packages. 
