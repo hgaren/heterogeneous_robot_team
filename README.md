@@ -12,7 +12,7 @@ G. Haddeler, A. Aybakan, M. C. Akay, and H. Temeltas, “Evaluation of 3d lidar 
 This ROS package  also includes other packages. 
 Before building this package, you should install these packages: 
 
-'''
+```
 ros-kinetic-hector-pose-estimatition 
 ros-kinetic-hector-uav-msg
 ros-kinetic-hardware-interface
@@ -30,8 +30,7 @@ ros-kinetic-octomap-server
 ros-kinetic-joint-State-controller
 ros-kinetic-diff-drive-controller
 ros-kinetic-velodyne-gazebo-plugin
-''
-
+```
 If gazebo wont open, you also need to install "palm_tree" , "oak_tree", "construction_barel", "fire hydrant", "asphalt_plane", "dumpster", "jersey_barrier" models from Gazebo. 
 
 For cmake , minimum requirement is 3.03 . If you need to upgrade the CMake, you can follow this instructions from  [link](https://askubuntu.com/questions/610291/how-to-install-cmake-3-2-on-ubuntu)
