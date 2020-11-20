@@ -3,6 +3,11 @@
 ## Istanbul Technical University Laboratory
 The purpose of this package is to simulate heterogeneous robot team (an aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration. Lastly, while implementing the heterogeneous team in real life,  slightly different techniques of registiration and map merging are used.
 
+## The Article and Citation
+https://rdcu.be/b6ekv
+
+G. Haddeler, A. Aybakan, M. C. Akay, and H. Temeltas, “Evaluation of 3d lidar sensor setup forheterogeneous robot team”, 2, vol. 100, 2020, pp. 689–709.
+
 ### Notes
 This ROS package  also includes other packages. 
 Before building this package, you should install these packages: hector_pose_estimatition , hector_uav_msg, hardware_interface, controller_interface, move_base, robot_localization, hector_gazebo_plugins, hector_sensor_description, gazebo_ros_control, message_to_tf, interactive_marker_twist_server,
@@ -69,4 +74,20 @@ Below script is used to merge map in real time environment.
 ```
 rosrun hetero_mapping cloud_merge_real
 ```
+
+## Results 
+The result videos demonstrates implementation of proposed collaborative mapping framework with a heterogeneous robot team (including an unmanned aerial vehicle and a ground vehicle).
+* Collaborative Mapping Simulation in Gazebo
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=r9c5m6STxKA "Simulation of Heterogeneous Team Robot")
+
+* Collaborative Mapping using Real-world Data
+
+ 
+
+
+
+
+
+
+
 
