@@ -3,10 +3,7 @@
 ## Istanbul Technical University Laboratory
 The purpose of this package is to simulate heterogeneous robot team (an aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration. Lastly, while implementing the heterogeneous team in real life,  slightly different techniques of registiration and map merging are used.
 
-## The Article and Citation
-https://rdcu.be/b6ekv
 
-G. Haddeler, A. Aybakan, M. C. Akay, and H. Temeltas, “Evaluation of 3d lidar sensor setup forheterogeneous robot team”, 2, vol. 100, 2020, pp. 689–709.
 
 ### Dependencies
 This ROS package  also includes other packages. 
@@ -34,6 +31,26 @@ ros-kinetic-velodyne-gazebo-plugin
 If gazebo wont open, you also need to install "palm_tree" , "oak_tree", "construction_barel", "fire hydrant", "asphalt_plane", "dumpster", "jersey_barrier" models from Gazebo. 
 
 For cmake , minimum requirement is 3.03 . If you need to upgrade the CMake, you can follow this instructions from  [link](https://askubuntu.com/questions/610291/how-to-install-cmake-3-2-on-ubuntu)
+
+### cloud_metric
+includes calculation of cloud performance(quality) and occupancy metric, for more information you can check our article
+### hector_quadrotor/all:
+including the controller, pose estimation, mesh, urdf and xacro files of hector quadrotor drone
+### hetero_demo
+includes launch files to execute simulation
+### hetero_gazebo_world:
+includes woodland based simulation environment
+### hetero_mapping:
+Includes 3D map merging framework
+### hetero_navigation:
+UGV and UAV 's individual 2D path planners (move_base)
+## hetero_teleop
+includes manual control of individual robots using keyboard in simulation 
+### hetero_waypoint:
+sens GPS based waypoints both UGV and UAV
+### husky/all:
+including husky controller, mesh, urdf and xacro files of husky ground vehicle
+
 
 ### Simulated-World Implementation
 
@@ -115,6 +132,9 @@ Heterogenous Robot Team: (Ground Vehicle) Husky A200 and (Aerial Vehicle) DJI Ma
  ![](docs/result.gif?raw=true)
 
 
+## The Article and Citation
+https://rdcu.be/b6ekv
 
+G. Haddeler, A. Aybakan, M. C. Akay, and H. Temeltas, “Evaluation of 3d lidar sensor setup forheterogeneous robot team”, 2, vol. 100, 2020, pp. 689–709.
 
 
