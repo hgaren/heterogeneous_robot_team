@@ -1,4 +1,4 @@
-# Heterogeneous Team ROS-Gazebo Simulation Package
+# Heterogeneous Robot Team Simulation Package in ROS-Gazebo 
 
 ## Istanbul Technical University Laboratory
 The purpose of this package is to simulate heterogeneous robot team (an aerial and a ground vehicle) in Gazebo, achieve multi-map merging from different view point and apply a senario for exploration. Lastly, while implementing the heterogeneous team in real life,  slightly different techniques of registiration and map merging are used.
@@ -35,7 +35,7 @@ For cmake , minimum requirement is 3.03 . If you need to upgrade the CMake, you 
 ### cloud_metric
 includes calculation of cloud performance(quality) and occupancy metric, for more information you can check our article
 ### hector_quadrotor/all:
-including the controller, pose estimation, mesh, urdf and xacro files of hector quadrotor drone
+including the controller, pose estimation, mesh, urdf and xacro files of hector quadrotor drone. More information:  [link](https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor)
 ### hetero_demo
 includes launch files to execute simulation
 ### hetero_gazebo_world:
@@ -49,7 +49,7 @@ includes manual control of individual robots using keyboard in simulation
 ### hetero_waypoint:
 sens GPS based waypoints both UGV and UAV
 ### husky/all:
-including husky controller, mesh, urdf and xacro files of husky ground vehicle
+including husky controller, mesh, urdf and xacro files of husky ground vehicle. More information: [link](https://github.com/husky/husky)
 
 
 ### Simulated-World Implementation
