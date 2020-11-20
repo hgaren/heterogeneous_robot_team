@@ -78,11 +78,11 @@ rosrun hetero_mapping cloud_merge_real
 ## Results 
 The result videos demonstrates implementation of proposed collaborative mapping framework with a heterogeneous robot team (including an unmanned aerial vehicle and a ground vehicle).
 * Collaborative Mapping Simulation in Gazebo
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=r9c5m6STxKA "Simulation of Heterogeneous Team Robot")
+[![Simulation Video](https://img.youtube.com/vi/r9c5m6STxKA/0.jpg)](https://www.youtube.com/watch?v=r9c5m6STxKA "Simulation of Heterogeneous Team Robot")
 
 * Collaborative Mapping using Real-world Data
 
- 
+ ![](docs/uncontrollable.gif?raw=true)
 
 
 
